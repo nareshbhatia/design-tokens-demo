@@ -1,7 +1,7 @@
 # Design Tokens Demo
 
-Sample application to demonstrate a design system pipeline that allows a design
-and code to remain in sync using design tokens.
+Sample application to demonstrate a design workflow that keeps design and code
+in sync using design tokens.
 
 ![Screenshot](assets/screenshot.png)
 
