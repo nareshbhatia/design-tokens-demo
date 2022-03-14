@@ -1,2 +1,2 @@
-This directory contains design tokens that are kept in sync with the Figma
-design.
+This directory contains multiple tokens files created by extracting top level
+nodes in `/tokens.json` pushed from Figma.
