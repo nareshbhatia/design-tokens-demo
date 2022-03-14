@@ -94,7 +94,7 @@ h6 {
   background-color: var(--theme-palette-background-paper);
   border: var(--panel-border-width) solid var(--theme-palette-panel-border);
   border-radius: var(--panel-border-radius);
-  box-shadow: var(--boxShadow-panelShadow);
+  box-shadow: var(--panel-boxShadow);
 }
 
 .h6 {
@@ -208,7 +208,7 @@ h6 {
   /* ----- New Stuff ----- */
   --panel-border-radius: 0.5rem;
   --panel-border-width: 1px;
-  --boxShadow-panelShadow: 0px 11px 4px rgba(0, 0, 0, 0.01),
+  --panel-boxShadow: 0px 11px 4px rgba(0, 0, 0, 0.01),
     0px 6px 4px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.08),
     0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 0px rgba(0, 0, 0, 0.1);
   --fontFamily-inter: Inter;
