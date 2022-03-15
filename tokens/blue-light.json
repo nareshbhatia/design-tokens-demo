@@ -1,0 +1,68 @@
+{
+  "theme": {
+    "palette": {
+      "primary": {
+        "light": {
+          "value": "#2680c2",
+          "type": "color"
+        },
+        "main": {
+          "value": "#0a558c",
+          "type": "color"
+        },
+        "dark": {
+          "value": "#003e6b",
+          "type": "color"
+        },
+        "contrastText": {
+          "value": "#ffffff",
+          "type": "color"
+        }
+      },
+      "secondary": {
+        "light": {
+          "value": "#fce588",
+          "type": "color"
+        },
+        "main": {
+          "value": "#f7c948",
+          "type": "color"
+        },
+        "dark": {
+          "value": "#b44d12",
+          "type": "color"
+        },
+        "contrastText": {
+          "value": "#102a43",
+          "type": "color"
+        }
+      },
+      "background": {
+        "default": {
+          "value": "#f1f2f6",
+          "type": "color"
+        },
+        "paper": {
+          "value": "#ffffff",
+          "type": "color"
+        }
+      },
+      "text": {
+        "primary": {
+          "value": "#102a43",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "#486581",
+          "type": "color"
+        }
+      },
+      "card": {
+        "border": {
+          "value": "#e0e0e0",
+          "type": "color"
+        }
+      }
+    }
+  }
+}
