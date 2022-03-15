@@ -1,8 +1,9 @@
+// ***** Generates styles using Style Dictionary *****
+
 const StyleDictionaryPackage = require('style-dictionary');
 const { createArray } = require('./fns');
 
-// HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
-
+/** Generates style dictionary config dynamically */
 StyleDictionaryPackage.registerFormat({
   name: 'css/variables',
   formatter: function (dictionary, config) {
@@ -12,6 +13,7 @@ StyleDictionaryPackage.registerFormat({
   },
 });
 
+/** Registers required transformations */
 StyleDictionaryPackage.registerTransform({
   name: 'sizes/px',
   type: 'value',
@@ -31,16 +33,17 @@ StyleDictionaryPackage.registerTransform({
   },
 });
 
-function getStyleDictionaryConfig(theme) {
+/** Returns the configuration for a theme */
+function getThemeConfig(theme) {
   return {
-    source: [`tokens/${theme}.json`],
+    source: [`tokens/output/${theme}.json`],
     format: {
       createArray,
     },
     platforms: {
       web: {
         transforms: ['attribute/cti', 'name/cti/kebab', 'sizes/px'],
-        buildPath: 'apps/advisor-desktop-css/styles/',
+        buildPath: 'apps/advisor-desktop-css/src/styles/output/',
         files: [
           {
             destination: `${theme}.json`,
@@ -57,24 +60,27 @@ function getStyleDictionaryConfig(theme) {
   };
 }
 
-console.log('Build started...');
+/** Processes global tokens and theme specific tokens */
+function main() {
+  console.log('Build started...');
 
-// PROCESS THE DESIGN TOKENS FOR THE DIFFEREN BRANDS AND PLATFORMS
+  ['global', 'blue-light', 'blue-dark', 'grey-light', 'grey-dark'].map(
+    function (theme) {
+      console.log('\n==============================================');
+      console.log(`\nProcessing: [${theme}]`);
 
-['global', 'blue-light', 'blue-dark', 'grey-light', 'grey-dark'].map(function (
-  theme
-) {
-  console.log('\n==============================================');
-  console.log(`\nProcessing: [${theme}]`);
+      const StyleDictionary = StyleDictionaryPackage.extend(
+        getThemeConfig(theme)
+      );
 
-  const StyleDictionary = StyleDictionaryPackage.extend(
-    getStyleDictionaryConfig(theme)
+      StyleDictionary.buildPlatform('web');
+
+      console.log('\nEnd processing');
+    }
   );
 
-  StyleDictionary.buildPlatform('web');
+  console.log('\n==============================================');
+  console.log('\nBuild completed!');
+}
 
-  console.log('\nEnd processing');
-});
-
-console.log('\n==============================================');
-console.log('\nBuild completed!');
+main();

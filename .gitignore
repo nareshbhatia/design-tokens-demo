@@ -35,3 +35,9 @@ yarn-error.log*
 # IDEs
 .idea
 .vscode
+
+# token pipeline
+tokens/output/*
+!tokens/output/README.md
+apps/advisor-desktop-css/src/styles/output/*
+!apps/advisor-desktop-css/src/styles/output/README.md
