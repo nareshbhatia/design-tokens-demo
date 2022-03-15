@@ -10,7 +10,13 @@ in sync using design tokens.
 To develop all apps and packages, run the following command:
 
 ```
+# Install dependencies
 npm install
+
+# Generate styles from tokens
+npm run token-pipeline
+
+# Run the app
 npm run dev
 ```
 
@@ -26,5 +32,6 @@ To build all apps and packages, run the following command:
 
 ```
 npm install
+npm run token-pipeline
 npm run build
 ```
