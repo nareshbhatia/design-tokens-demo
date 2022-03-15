@@ -90,11 +90,11 @@ h6 {
   color: var(--theme-palette-primary-contrastText);
 }
 
-.panel {
+.card {
   background-color: var(--theme-palette-background-paper);
-  border: var(--panel-border-width) solid var(--theme-palette-panel-border);
-  border-radius: var(--panel-border-radius);
-  box-shadow: var(--panel-boxShadow);
+  border: var(--card-border-width) solid var(--theme-palette-card-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-boxShadow);
 }
 
 .h6 {
@@ -127,7 +127,7 @@ h6 {
   --theme-palette-background-default: #f1f2f6;
   --theme-palette-background-paper: #ffffff;
   --theme-palette-text-primary: #102a43;
-  --theme-palette-panel-border: #e0e0e0;
+  --theme-palette-card-border: #e0e0e0;
 }
 
 .grey-dark-theme {
@@ -136,7 +136,7 @@ h6 {
   --theme-palette-background-default: #121212;
   --theme-palette-background-paper: #1e1e1e;
   --theme-palette-text-primary: #f0f4f8;
-  --theme-palette-panel-border: #1f2937;
+  --theme-palette-card-border: #1f2937;
 }
 
 .h-86px {
@@ -206,9 +206,9 @@ h6 {
   --font-size-3xl: var(--px-32);
 
   /* ----- New Stuff ----- */
-  --panel-border-radius: 0.5rem;
-  --panel-border-width: 1px;
-  --panel-boxShadow: 0px 11px 4px rgba(0, 0, 0, 0.01),
+  --card-border-radius: 0.5rem;
+  --card-border-width: 1px;
+  --card-boxShadow: 0px 11px 4px rgba(0, 0, 0, 0.01),
     0px 6px 4px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.08),
     0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 0px rgba(0, 0, 0, 0.1);
   --fontFamily-inter: Inter;
