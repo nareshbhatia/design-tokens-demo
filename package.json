@@ -17,11 +17,14 @@
     "build-tokens-blue-light": "token-transformer tokens.json tokens/blue-light.json global,blue-light global",
     "build-tokens-blue-dark": "token-transformer tokens.json tokens/blue-dark.json global,blue-dark global",
     "build-tokens-grey-light": "token-transformer tokens.json tokens/grey-light.json global,grey-light global",
-    "build-tokens-grey-dark": "token-transformer tokens.json tokens/grey-dark.json global,grey-dark global"
+    "build-tokens-grey-dark": "token-transformer tokens.json tokens/grey-dark.json global,grey-dark global",
+    "build-css": "node ./infrastructure/build-styles.js",
+    "tokens-to-css": "run-s build-tokens build-css"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
+    "style-dictionary": "^3.7.0",
     "token-transformer": "^0.0.19",
     "turbo": "latest"
   },
