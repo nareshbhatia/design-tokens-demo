@@ -15,23 +15,68 @@ StyleDictionary.registerFormat({
   },
 });
 
-/** Registers transform for sizes */
+/** Registers transform for sizes to px */
 StyleDictionary.registerTransform({
   name: 'sizes/px',
   type: 'value',
-  matcher: function (prop) {
-    // You can be more specific here if you only want 'em' units for font sizes
-    // TODO: Rethink how sizes should be transformed
-    return [
-      // 'fontSize',
-      // 'spacing',
-      // 'borderRadius',
-      // 'borderWidth',
-      // 'sizing',
-    ].includes(prop.attributes.category);
+  matcher: function (token) {
+    return ['borderWidth'].includes(token.type);
   },
-  transformer: function (prop) {
-    return parseFloat(prop.original.value) + 'px';
+  transformer: function (token) {
+    return `${token.value}px`;
+  },
+});
+
+/** Registers transform for sizes to rem */
+StyleDictionary.registerTransform({
+  name: 'sizes/rem',
+  type: 'value',
+  matcher: function (token) {
+    return ['fontSizes', 'borderRadius'].includes(token.type);
+  },
+  transformer: function (token) {
+    return `${parseFloat(token.value) / 16}rem`;
+  },
+});
+
+/** Registers transform for sizes from percent to number (unit less) */
+StyleDictionary.registerTransform({
+  name: 'sizes/percentToNumber',
+  type: 'value',
+  matcher: function (token) {
+    return ['lineHeights'].includes(token.type);
+  },
+  transformer: function (token) {
+    return parseFloat(token.value) / 100;
+  },
+});
+
+/** Registers transform for fontWeights */
+StyleDictionary.registerTransform({
+  name: 'font/weights',
+  type: 'value',
+  matcher: function (token) {
+    return token.type === 'fontWeights';
+  },
+  transformer: (token) => {
+    const map = {
+      Light: 300,
+      Regular: 400,
+      Medium: 500,
+    };
+    return map[token.value];
+  },
+});
+
+/** Registers transform for letterSpacing */
+StyleDictionary.registerTransform({
+  name: 'font/letterSpacing',
+  type: 'value',
+  matcher: function (token) {
+    return token.type === 'letterSpacing';
+  },
+  transformer: (token) => {
+    return `${parseFloat(token.value) / 100}em`;
   },
 });
 
@@ -81,10 +126,13 @@ function getThemeConfig(theme) {
     platforms: {
       web: {
         transforms: [
-          'attribute/cti',
           'name/cti/kebab',
           'sizes/px',
+          'sizes/rem',
+          'sizes/percentToNumber',
           'shadow/spreadShadow',
+          'font/weights',
+          'font/letterSpacing',
         ],
         buildPath: 'apps/advisor-desktop-css/src/styles/output/',
         files: [

@@ -20,7 +20,7 @@
     "gen-tokens-grey-dark": "token-transformer tokens/tokens.json tokens/output/grey-dark.json global,grey-dark global",
     "gen-styles": "node ./infrastructure/generate-styles.js",
     "postcss:run": "postcss apps/advisor-desktop-css/src/styles/styles.css -o apps/advisor-desktop-css/src/main-delete.css",
-    "token-pipeline": "run-s gen-tokens gen-styles postcss:run"
+    "token-pipeline": "run-s gen-tokens gen-styles"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.2",

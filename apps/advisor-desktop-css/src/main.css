@@ -12,7 +12,7 @@ body {
   color: var(--theme-palette-text-primary);
   background-color: var(--theme-palette-background-default);
   margin: 0;
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-font-sans);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.6;
@@ -99,7 +99,7 @@ h6 {
 }
 
 .h6 {
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-font-sans);
   font-size: var(--font-size-h6);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-h6);
@@ -107,7 +107,7 @@ h6 {
 }
 
 .h6sm {
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-font-sans);
   font-size: var(--font-size-h6sm);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-h6);
@@ -115,7 +115,7 @@ h6 {
 }
 
 .h6xs {
-  font-family: var(--font-family-inter);
+  font-family: var(--font-family-font-sans);
   font-size: var(--font-size-h6xs);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-h6);
@@ -123,7 +123,7 @@ h6 {
 }
 
 .leading-none {
-  line-height: 1;
+  line-height: var(--leading-none);
 }
 
 .grey-light-theme {
@@ -216,7 +216,7 @@ h6 {
     0px 6px 4px rgba(0, 0, 0, 0.05), 0px 3px 3px rgba(0, 0, 0, 0.08),
     0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 0px rgba(0, 0, 0, 0.1);
   --card-border-radius: 0.5rem;
-  --card-border-width: 1;
+  --card-border-width: 1px;
   --color-black: #000000;
   --color-white: #ffffff;
   --color-grey-50: #fafafa;
@@ -265,15 +265,15 @@ h6 {
   --color-yellow-700: #cb6e17;
   --color-yellow-800: #b44d12;
   --color-yellow-900: #8d2b0b;
-  --font-family-inter: Inter;
-  --line-height-h1: 112;
-  --line-height-h2: 72;
-  --line-height-h3: 56;
-  --line-height-h4: 42;
-  --line-height-h5: 32;
-  --line-height-h6: 32;
-  --line-height-body1: 24;
-  --line-height-body2: 20;
+  --font-family-font-sans: Inter;
+  --line-height-h1: 1.167;
+  --line-height-h2: 1.2;
+  --line-height-h3: 1.167;
+  --line-height-h4: 1.235;
+  --line-height-h5: 1.334;
+  --line-height-h6: 1.6;
+  --line-height-body1: 1.5;
+  --line-height-body2: 1.43;
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -287,14 +287,15 @@ h6 {
   --font-size-h6xs: 1rem;
   --font-size-body1: 1rem;
   --font-size-body2: 0.875rem;
-  --letter-spacing-h1: -1.56%;
-  --letter-spacing-h2: -0.833%;
-  --letter-spacing-h4: 0.735%;
-  --letter-spacing-h6: 0.75%;
-  --letter-spacing-body1: 0.938%;
-  --letter-spacing-body2: 1.071%;
-  --letter-spacing-none: 0%;
+  --letter-spacing-h1: -0.01562em;
+  --letter-spacing-h2: -0.00833em;
+  --letter-spacing-h4: 0.00735em;
+  --letter-spacing-h6: 0.0075em;
+  --letter-spacing-body1: 0.00938em;
+  --letter-spacing-body2: 0.01071em;
+  --letter-spacing-none: 0em;
   --paragraph-spacing-0: 0;
   --text-case-none: none;
   --text-decoration-none: none;
+  --leading-none: 1;
 }
