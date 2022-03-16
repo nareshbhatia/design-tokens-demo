@@ -19,16 +19,16 @@
     "gen-tokens-grey-light": "token-transformer tokens/tokens.json tokens/output/grey-light.json global,grey-light global",
     "gen-tokens-grey-dark": "token-transformer tokens/tokens.json tokens/output/grey-dark.json global,grey-dark global",
     "gen-styles": "node ./infrastructure/generate-styles.js",
-    "postcss:run": "postcss apps/advisor-desktop-css/src/styles/styles.css -o apps/advisor-desktop-css/src/main-delete.css",
-    "token-pipeline": "run-s gen-tokens gen-styles"
+    "postcss:run": "postcss apps/advisor-desktop-css/src/styles/styles.css -o apps/advisor-desktop-css/src/main.css",
+    "token-pipeline": "run-s gen-tokens gen-styles postcss:run"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
+    "autoprefixer": "^10.4.4",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.8",
+    "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
-    "prettier": "^2.5.1",
+    "prettier": "^2.6.0",
     "style-dictionary": "^3.7.0",
     "token-transformer": "^0.0.19",
     "turbo": "latest"

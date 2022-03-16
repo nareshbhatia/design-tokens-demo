@@ -91,7 +91,7 @@ StyleDictionary.registerTransform({
     const shadows = Object.values(token.value);
     const result = shadows.map(
       (shadow) =>
-        `${shadow.x} ${shadow.y} ${shadow.blur} ${shadow.spread} ${shadow.color}`
+        `${shadow.x}px ${shadow.y}px ${shadow.blur}px ${shadow.spread}px ${shadow.color}`
     );
     return result.join(',');
   },
@@ -126,6 +126,9 @@ function getThemeConfig(theme) {
     platforms: {
       web: {
         transforms: [
+          // disable cti (category/type/item) support
+          // we dont use this taxonomy
+          // 'attribute/cti',
           'name/cti/kebab',
           'sizes/px',
           'sizes/rem',
@@ -143,7 +146,7 @@ function getThemeConfig(theme) {
           {
             destination: `${theme}.css`,
             format: 'css/variables',
-            selector: `.${theme}-theme`,
+            selector: theme === 'global' ? ':root' : `.${theme}-theme`,
           },
         ],
       },
