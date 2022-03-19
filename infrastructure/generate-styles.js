@@ -99,13 +99,18 @@ StyleDictionary.registerTransform({
 
 console.log('Build started...');
 
-/** Processes global tokens and theme specific tokens */
-['global', 'blue-light', 'blue-dark', 'grey-light', 'grey-dark'].map(function (
-  theme
-) {
-  console.log(`\nProcessing: [${theme}]`);
+/** Processes global, semantic and brand token sets */
+[
+  'global',
+  'semantic',
+  'brand1-light',
+  'brand1-dark',
+  'brand2-light',
+  'brand2-dark',
+].map(function (tokenSet) {
+  console.log(`\nProcessing: [${tokenSet}]`);
 
-  const StyleDictionaryExtended = StyleDictionary.extend(getThemeConfig(theme));
+  const StyleDictionaryExtended = StyleDictionary.extend(getTokenSetConfig(tokenSet));
 
   StyleDictionaryExtended.buildPlatform('web');
 
@@ -116,10 +121,10 @@ console.log('\nBuild completed!');
 
 // ---------- Helper functions ----------
 
-/** Returns the configuration for a theme */
-function getThemeConfig(theme) {
+/** Returns the configuration for a token set */
+function getTokenSetConfig(tokenSet) {
   return {
-    source: [`tokens/output/${theme}.json`],
+    source: [`tokens/output/${tokenSet}.json`],
     format: {
       createArray,
     },
@@ -140,13 +145,13 @@ function getThemeConfig(theme) {
         buildPath: 'apps/advisor-desktop-css/src/styles/output/',
         files: [
           {
-            destination: `${theme}.json`,
+            destination: `${tokenSet}.json`,
             format: 'createArray',
           },
           {
-            destination: `${theme}.css`,
+            destination: `${tokenSet}.css`,
             format: 'css/variables',
-            selector: theme === 'global' ? ':root' : `.${theme}-theme`,
+            selector: tokenSet === 'global' ? ':root' : `.${tokenSet}`,
           },
         ],
       },

@@ -1,6 +1,7 @@
 @import "custom.css";
 @import "output/global.css";
-@import "output/blue-light.css";
-@import "output/blue-dark.css";
-@import "output/grey-light.css";
-@import "output/grey-dark.css";
+@import "output/semantic.css";
+@import "output/brand1-light.css";
+@import "output/brand1-dark.css";
+@import "output/brand2-light.css";
+@import "output/brand2-dark.css";
