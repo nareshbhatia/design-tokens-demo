@@ -30,6 +30,84 @@ p {
   margin: 0;
 }
 
+/* ----- Interactivity ----- */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ----- Flexbox ----- */
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-2 {
+  flex: 2;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.flex-grow-2 {
+  flex-grow: 2;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-baseline {
+  align-items: baseline;
+}
+
+.items-stretch {
+  align-items: stretch;
+}
+
 /* ----- Margin ----- */
 .m-0 {
   margin: 0;
@@ -63,6 +141,22 @@ p {
   margin-top: var(--sp-3);
 }
 
+.ml-0 {
+  margin-left: 0;
+}
+
+.ml-1 {
+  margin-left: var(--sp-1);
+}
+
+.ml-2 {
+  margin-left: var(--sp-2);
+}
+
+.ml-3 {
+  margin-left-top: var(--sp-3);
+}
+
 /* ----- Padding ----- */
 .p-0 {
   padding: 0;
@@ -78,6 +172,11 @@ p {
 
 .p-3 {
   padding: var(--sp-3);
+}
+
+/* ----- Border ----- */
+.border-none {
+  border-style: none;
 }
 
 /* ----- Typography ----- */
@@ -179,22 +278,43 @@ p {
 
 .card {
   background-color: var(--semantic-color-background-paper);
-  border: var(--semantic-border-width-default) solid var(--semantic-color-card-border);
+  border: var(--semantic-border-width-default) solid
+    var(--semantic-color-card-border);
   border-radius: var(--semantic-border-radius-default);
   box-shadow: var(--box-shadow-1);
 }
 
+.bg-primary-main {
+  background-color: var(--semantic-color-primary-main);
+}
+
+.primary-icon-muted {
+  color: var(--semantic-color-primary-icon-muted);
+}
+
+.primary-icon-bright {
+  color: var(--semantic-color-primary-icon-bright);
+}
+
 /* ----- Layouts ----- */
-.h-86px {
+.h-24 {
+  height: 24px;
+}
+
+.h-86 {
   height: 86px;
 }
 
-.h-114px {
+.h-114 {
   height: 114px;
 }
 
-.h-400px {
+.h-400 {
   height: 400px;
+}
+
+.w-24 {
+  width: 24px;
 }
 
 .grid-2-col {
