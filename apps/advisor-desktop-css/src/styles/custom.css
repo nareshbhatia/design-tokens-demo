@@ -154,7 +154,7 @@ p {
 }
 
 .ml-3 {
-  margin-left-top: var(--sp-3);
+  margin-left: var(--sp-3);
 }
 
 /* ----- Padding ----- */
@@ -180,6 +180,26 @@ p {
 }
 
 /* ----- Typography ----- */
+.font-sans {
+  font-family: var(--semantic-font-family-sans);
+}
+
+.text-xs {
+  font-size: var(--font-size-xs);
+}
+
+.font-light {
+  font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+  font-weight: var(--font-weight-medium);
+}
+
 .line-height-none {
   line-height: var(--line-height-none) !important;
 }
@@ -264,6 +284,66 @@ p {
   letter-spacing: var(--semantic-letter-spacing-body2);
 }
 
+/* ----- Backgrounds ----- */
+.bg-default {
+  background-color: var(--semantic-color-background-default);
+}
+
+.bg-paper {
+  background-color: var(--semantic-color-background-paper);
+}
+
+.bg-primary-light {
+  background-color: var(--semantic-color-primary-light);
+}
+
+.bg-primary-main {
+  background-color: var(--semantic-color-primary-main);
+}
+
+.bg-primary-dark {
+  background-color: var(--semantic-color-primary-dark);
+}
+
+.bg-secondary-light {
+  background-color: var(--semantic-color-secondary-light);
+}
+
+.bg-secondary-main {
+  background-color: var(--semantic-color-secondary-main);
+}
+
+.bg-secondary-dark {
+  background-color: var(--semantic-color-secondary-dark);
+}
+
+/* ----- Text Colors ----- */
+.text-primary {
+  color: var(--semantic-color-text-primary);
+}
+
+.text-secondary {
+  color: var(--semantic-color-text-secondary);
+}
+
+.text-primary-contrast {
+  color: var(--semantic-color-primary-contrast-text);
+}
+
+.text-secondary-contrast {
+  color: var(--semantic-color-secondary-contrast-text);
+}
+
+/* ----- Icon Colors ----- */
+.primary-icon-muted {
+  color: var(--semantic-color-primary-icon-muted);
+}
+
+.primary-icon-bright {
+  color: var(--semantic-color-primary-icon-bright);
+}
+
+
 /* ----- Components ----- */
 .appbar {
   display: flex;
@@ -284,16 +364,12 @@ p {
   box-shadow: var(--box-shadow-1);
 }
 
-.bg-primary-main {
-  background-color: var(--semantic-color-primary-main);
-}
-
-.primary-icon-muted {
-  color: var(--semantic-color-primary-icon-muted);
-}
-
-.primary-icon-bright {
-  color: var(--semantic-color-primary-icon-bright);
+.swatch {
+  width: 230px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ----- Layouts ----- */
@@ -315,6 +391,10 @@ p {
 
 .w-24 {
   width: 24px;
+}
+
+.max-w-800 {
+  max-width: 800px;
 }
 
 .grid-2-col {
