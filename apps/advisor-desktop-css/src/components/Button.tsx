@@ -4,7 +4,6 @@ export interface ButtonProps {
   rootClass?: string;
   color?: 'default' | 'primary' | 'secondary';
   disabled?: boolean;
-  fullWidth?: boolean;
   size?: 'small' | 'medium' | 'large';
   variant?: 'contained' | 'outlined';
   children?: React.ReactNode;
@@ -14,7 +13,6 @@ export const Button = ({
   rootClass,
   color = 'default',
   disabled = false,
-  fullWidth = false,
   size = 'medium',
   variant = 'contained',
   children,
