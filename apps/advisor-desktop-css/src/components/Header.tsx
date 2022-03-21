@@ -56,6 +56,7 @@ export function Header() {
       <div className="flex flex-row">
         <button
           type="button"
+          title="Toggle Brand"
           className="bg-primary-main border-none cursor-pointer"
           onClick={toggleBrand}
         >
@@ -69,6 +70,7 @@ export function Header() {
         </button>
         <button
           type="button"
+          title="Light/Dark"
           className="bg-primary-main border-none cursor-pointer ml-1"
           onClick={toggleMode}
         >
@@ -80,6 +82,7 @@ export function Header() {
         </button>
         <button
           type="button"
+          title="Show Design System"
           className="bg-primary-main border-none cursor-pointer ml-1"
           onClick={navigateToDesignSystem}
         >

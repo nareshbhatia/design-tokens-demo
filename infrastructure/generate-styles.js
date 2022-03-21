@@ -20,7 +20,7 @@ StyleDictionary.registerTransform({
   name: 'sizes/px',
   type: 'value',
   matcher: function (token) {
-    return ['borderWidth'].includes(token.type);
+    return ['borderRadius', 'borderWidth'].includes(token.type);
   },
   transformer: function (token) {
     return `${token.value}px`;
@@ -32,7 +32,7 @@ StyleDictionary.registerTransform({
   name: 'sizes/rem',
   type: 'value',
   matcher: function (token) {
-    return ['fontSizes', 'borderRadius'].includes(token.type);
+    return ['fontSizes', 'spacing'].includes(token.type);
   },
   transformer: function (token) {
     return `${parseFloat(token.value) / 16}rem`;
@@ -41,13 +41,15 @@ StyleDictionary.registerTransform({
 
 /** Registers transform for sizes from percent to number (unit less) */
 StyleDictionary.registerTransform({
-  name: 'sizes/percentToNumber',
+  name: 'sizes/lineHeights',
   type: 'value',
   matcher: function (token) {
     return ['lineHeights'].includes(token.type);
   },
   transformer: function (token) {
-    return parseFloat(token.value) / 100;
+    return typeof token.value === 'string' && token.value.includes('%')
+      ? parseFloat(token.value) / 100
+      : `${parseFloat(token.value) / 16}rem`;
   },
 });
 
@@ -110,7 +112,9 @@ console.log('Build started...');
 ].map(function (tokenSet) {
   console.log(`\nProcessing: [${tokenSet}]`);
 
-  const StyleDictionaryExtended = StyleDictionary.extend(getTokenSetConfig(tokenSet));
+  const StyleDictionaryExtended = StyleDictionary.extend(
+    getTokenSetConfig(tokenSet)
+  );
 
   StyleDictionaryExtended.buildPlatform('web');
 
@@ -137,7 +141,7 @@ function getTokenSetConfig(tokenSet) {
           'name/cti/kebab',
           'sizes/px',
           'sizes/rem',
-          'sizes/percentToNumber',
+          'sizes/lineHeights',
           'shadow/spreadShadow',
           'font/weights',
           'font/letterSpacing',

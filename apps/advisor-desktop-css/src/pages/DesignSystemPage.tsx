@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header } from '../components';
+import { Button, Header } from '../components';
 
 export interface SwatchProps {
   className?: string;
@@ -122,6 +122,82 @@ export function DesignSystemPage() {
                 caption="semantic.color.secondary.contrastText"
               />
             </div>
+          </div>
+        </div>
+
+        <div className="card max-w-800 p-3 mt-3">
+          <h5 className="h5">Buttons</h5>
+
+          <h6 className="h6 mt-2">Contained Buttons</h6>
+          <div className="mt-1">
+            <Button>Default</Button>
+            <Button rootClass="ml-1" color="primary">
+              Primary
+            </Button>
+            <Button rootClass="ml-1" color="secondary">
+              Secondary
+            </Button>
+            <Button rootClass="ml-1" disabled>
+              Disabled
+            </Button>
+          </div>
+
+          <h6 className="h6 mt-2">Outlined Buttons</h6>
+          <div className="mt-1">
+            <Button variant="outlined">Default</Button>
+            <Button rootClass="ml-1" variant="outlined" color="primary">
+              Primary
+            </Button>
+            <Button rootClass="ml-1" variant="outlined" color="secondary">
+              Secondary
+            </Button>
+            <Button rootClass="ml-1" variant="outlined" disabled>
+              Disabled
+            </Button>
+          </div>
+
+          <h6 className="h6 mt-2">Sizes</h6>
+          <div className="mt-1">
+            <Button variant="contained" color="primary" size="small">
+              Small
+            </Button>
+            <Button
+              rootClass="ml-1"
+              variant="contained"
+              color="primary"
+              size="medium"
+            >
+              Medium
+            </Button>
+            <Button
+              rootClass="ml-1"
+              variant="contained"
+              color="primary"
+              size="large"
+            >
+              Large
+            </Button>
+          </div>
+          <div className="mt-2">
+            <Button variant="outlined" color="primary" size="small">
+              Small
+            </Button>
+            <Button
+              rootClass="ml-1"
+              variant="outlined"
+              color="primary"
+              size="medium"
+            >
+              Medium
+            </Button>
+            <Button
+              rootClass="ml-1"
+              variant="outlined"
+              color="primary"
+              size="large"
+            >
+              Large
+            </Button>
           </div>
         </div>
       </div>

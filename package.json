@@ -20,8 +20,8 @@
     "gen-tokens-brand2-light": "token-transformer tokens/tokens.json tokens/output/brand2-light.json global,brand2-light global",
     "gen-tokens-brand2-dark": "token-transformer tokens/tokens.json tokens/output/brand2-dark.json global,brand2-dark global",
     "gen-styles": "node ./infrastructure/generate-styles.js",
-    "postcss:run": "postcss apps/advisor-desktop-css/src/styles/styles.css -o apps/advisor-desktop-css/src/main.css",
-    "token-pipeline": "run-s gen-tokens gen-styles postcss:run"
+    "postcss": "postcss apps/advisor-desktop-css/src/styles/styles.css -o apps/advisor-desktop-css/src/main.css",
+    "token-pipeline": "run-s gen-tokens gen-styles postcss"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.4",

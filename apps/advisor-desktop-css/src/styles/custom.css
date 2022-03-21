@@ -176,7 +176,7 @@ p {
 
 /* ----- Border ----- */
 .border-none {
-  border-style: none;
+  border-width: var(--semantic-border-width-none);
 }
 
 /* ----- Typography ----- */
@@ -186,6 +186,14 @@ p {
 
 .text-xs {
   font-size: var(--font-size-xs);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-base {
+  font-size: var(--font-size-base);
 }
 
 .font-light {
@@ -343,7 +351,6 @@ p {
   color: var(--semantic-color-primary-icon-bright);
 }
 
-
 /* ----- Components ----- */
 .appbar {
   display: flex;
@@ -358,10 +365,117 @@ p {
 
 .card {
   background-color: var(--semantic-color-background-paper);
-  border: var(--semantic-border-width-default) solid
-    var(--semantic-color-card-border);
-  border-radius: var(--semantic-border-radius-default);
+  border: var(--semantic-border-width-default) solid var(--card-border-color);
+  border-radius: var(--card-border-radius);
   box-shadow: var(--box-shadow-1);
+}
+
+.button {
+  font-family: inherit;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  border-radius: var(--button-border-radius);
+}
+
+.button--small {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-16);
+  padding: var(--space-pt-6) var(--space-pr-10) var(--space-pb-6)
+    var(--space-pl-10);
+}
+
+.button--medium {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-16);
+  padding: var(--space-pt-8) var(--space-pr-12) var(--space-pb-8)
+    var(--space-pl-12);
+}
+
+.button--large {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-20);
+  padding: var(--space-pt-8) var(--space-pr-16) var(--space-pb-8)
+    var(--space-pl-16);
+}
+
+.button--contained {
+  border-width: var(--semantic-border-width-default);
+  border-color: var(--color-transparent);
+}
+
+.button--contained-default {
+  color: var(--button-contained-default-text-color);
+  background-color: var(--button-contained-default-background-color);
+}
+
+.button--contained-default:hover {
+  background-color: var(--button-contained-default-state-hover);
+}
+
+.button--contained-primary {
+  color: var(--semantic-color-primary-contrast-text);
+  background-color: var(--semantic-color-primary-main);
+}
+
+.button--contained-primary:hover {
+  background-color: var(--button-contained-primary-state-hover);
+}
+
+.button--contained-secondary {
+  color: var(--semantic-color-secondary-contrast-text);
+  background-color: var(--semantic-color-secondary-main);
+}
+
+.button--contained-secondary:hover {
+  background-color: var(--button-contained-secondary-state-hover);
+}
+
+.button--outlined {
+  background-color: var(--color-transparent);
+  border-width: var(--semantic-border-width-default);
+  border-style: solid;
+}
+
+.button--outlined-default {
+  color: var(--semantic-color-text-primary);
+  border-color: var(--button-outlined-default-border-color);
+}
+
+.button--outlined-default:hover {
+  background-color: var(--button-outlined-default-state-hover);
+}
+
+.button--outlined-primary {
+  color: var(--semantic-color-primary-main);
+  border-color: var(--semantic-color-primary-main);
+}
+
+.button--outlined-primary:hover {
+  background-color: var(--button-outlined-primary-state-hover);
+}
+
+.button--outlined-secondary {
+  color: var(--semantic-color-secondary-dark);
+  border-color: var(--semantic-color-secondary-dark);
+}
+
+.button--outlined-secondary:hover {
+  background-color: var(--button-outlined-secondary-state-hover);
+}
+
+.button--disabled {
+  cursor: default;
+  pointer-events: none;
+}
+
+.button--disabled-contained {
+  color: var(--semantic-color-state-disabled-text);
+  background-color: var(--semantic-color-state-disabled);
+}
+
+.button--disabled-outlined {
+  color: var(--semantic-color-state-disabled-text);
+  border-color: var(--semantic-color-state-disabled);
 }
 
 .swatch {
