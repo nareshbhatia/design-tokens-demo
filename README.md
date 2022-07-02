@@ -5,6 +5,10 @@ in sync using design tokens.
 
 ![Screenshot](assets/screenshot.png)
 
+The Figma file for this project can be found
+[here](https://www.figma.com/community/file/1087643130213620036). It is the
+source of truth for the design tokens used in this project.
+
 ## Development Build
 
 To develop all apps and packages, run the following command:
