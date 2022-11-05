@@ -22,10 +22,10 @@ element. See the `setTheme()` function in
 is done.
 
 It is interesting to note that brand1 and brand2 use different font families
-(Inter and Fira-Sans respectively). This is done by setting the value of
+(Inter and Fira Sans respectively). This is done by setting the value of
 `semantic-font-family-sans` variable to `Inter` in the semantic layer and
 overriding with `Fira Sans` in the `brand2-light` and `brand2-dark` layers (see
-main.css).
+[main.css](apps/advisor-desktop-css/src/main.css)).
 
 The Figma file for this project can be found
 [here](https://www.figma.com/community/file/1087643130213620036). It is the
