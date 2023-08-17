@@ -8,7 +8,7 @@ const { createArray } = require('./fns');
 /** Generates style dictionary config dynamically */
 StyleDictionary.registerFormat({
   name: 'css/variables',
-  formatter: function (dictionary, config) {
+  formatter: function(dictionary, config) {
     return `${this.selector} {\n${dictionary.allProperties
       .map((prop) => `  --${prop.name}: ${prop.value};`)
       .join('\n')}\n}`;
@@ -19,10 +19,10 @@ StyleDictionary.registerFormat({
 StyleDictionary.registerTransform({
   name: 'sizes/px',
   type: 'value',
-  matcher: function (token) {
+  matcher: function(token) {
     return ['borderRadius', 'borderWidth'].includes(token.type);
   },
-  transformer: function (token) {
+  transformer: function(token) {
     return `${token.value}px`;
   },
 });
@@ -31,10 +31,10 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'sizes/rem',
   type: 'value',
-  matcher: function (token) {
+  matcher: function(token) {
     return ['fontSizes', 'spacing'].includes(token.type);
   },
-  transformer: function (token) {
+  transformer: function(token) {
     return `${parseFloat(token.value) / 16}rem`;
   },
 });
@@ -43,10 +43,10 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'sizes/lineHeights',
   type: 'value',
-  matcher: function (token) {
+  matcher: function(token) {
     return ['lineHeights'].includes(token.type);
   },
-  transformer: function (token) {
+  transformer: function(token) {
     return typeof token.value === 'string' && token.value.includes('%')
       ? parseFloat(token.value) / 100
       : `${parseFloat(token.value) / 16}rem`;
@@ -57,7 +57,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'font/weights',
   type: 'value',
-  matcher: function (token) {
+  matcher: function(token) {
     return token.type === 'fontWeights';
   },
   transformer: (token) => {
@@ -74,7 +74,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'font/letterSpacing',
   type: 'value',
-  matcher: function (token) {
+  matcher: function(token) {
     return token.type === 'letterSpacing';
   },
   transformer: (token) => {
@@ -86,7 +86,7 @@ StyleDictionary.registerTransform({
 StyleDictionary.registerTransform({
   name: 'shadow/spreadShadow',
   type: 'value',
-  matcher: function (token) {
+  matcher: function(token) {
     return token.type === 'boxShadow';
   },
   transformer: (token) => {
@@ -108,8 +108,8 @@ console.log('Build started...');
   'brand1-light',
   'brand1-dark',
   'brand2-light',
-  'brand2-dark',
-].map(function (tokenSet) {
+  'brand2-dark'
+].map(function(tokenSet) {
   console.log(`\nProcessing: [${tokenSet}]`);
 
   const StyleDictionaryExtended = StyleDictionary.extend(

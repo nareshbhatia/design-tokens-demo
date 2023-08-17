@@ -1,0 +1,44 @@
+{
+    "mode": "single-file",
+    "mapping": [
+        {
+            "tokenSets": [
+                "global",
+                "semantic",
+                "brand1-light"
+            ],
+            "supernovaBrand": "Default",
+            "supernovaTheme": null
+        },
+        {
+            "tokenSets": [
+                "global",
+                "brand1-dark"
+            ],
+            "supernovaBrand": "Default",
+            "supernovaTheme": "Dark"
+        },
+        {
+            "tokenSets": [
+                "global",
+                "semantic",
+                "brand2-light"
+            ],
+            "supernovaBrand": "brand2",
+            "supernovaTheme": null
+        },
+        {
+            "tokenSets": [
+                "global",
+                "brand2-dark"
+            ],
+            "supernovaBrand": "brand2",
+            "supernovaTheme": "Dark"
+        }
+    ],
+    "settings": {
+        "dryRun": false,
+        "verbose": false,
+        "preciseCopy": false
+    }
+}
